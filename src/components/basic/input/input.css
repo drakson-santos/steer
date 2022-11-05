@@ -1,0 +1,22 @@
+#InputMain {
+  outline: none;
+
+  font-family: inherit;
+  border-radius: 6px;
+  font-size: 17px;
+  padding: 14px 16px;
+  width: 330px;
+
+  background: #FFFFFF;
+  border: 1px solid #dddfe2;
+  color: #1d2129;
+  vertical-align: middle;
+  height: 22px;
+  line-height: 16px;
+}
+
+#InputMain:focus  {
+  border-color: #1b74e4;
+  box-shadow: 0 0 0 2px #e7f3ff;
+  caret-color: #1b74e4;
+}
