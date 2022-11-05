@@ -1,4 +1,9 @@
 #InputMain {
+  display: flex;
+  flex-direction: row;
+}
+
+.input-main {
   outline: none;
 
   font-family: inherit;
@@ -14,9 +19,15 @@
   height: 22px;
   line-height: 16px;
 }
-
-#InputMain:focus  {
+.input-main:focus  {
   border-color: #1b74e4;
   box-shadow: 0 0 0 2px #e7f3ff;
   caret-color: #1b74e4;
+}
+
+.input-icon {
+  background-color: #900D0D;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
