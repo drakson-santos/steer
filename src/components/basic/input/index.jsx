@@ -1,7 +1,10 @@
 import "./input.css"
 import { AiOutlineUser } from 'react-icons/ai';
 
-const InputMain = () => {
+const InputMain = ({
+	placeholder,
+}) => {
+
 	return (
 		<div id="InputMain">
 			<div className="input-icon">
@@ -10,7 +13,11 @@ const InputMain = () => {
 					color="white"
 				/>
 			</div>
-			<input className="input-main" type="text"/>
+			<input 
+				className="input-main" 
+				type="text"
+				placeholder={placeholder}
+			/>
 		</div>
 	)
 }

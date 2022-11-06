@@ -1,9 +1,9 @@
 import Button from 'react-bootstrap/Button';
 
-const ButtonMain = () => {
+const ButtonMain = ({ title }) => {
 	return (
 		<Button variant="primary">
-            Login
+            {title}
         </Button>
 	)	
 }

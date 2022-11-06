@@ -1,9 +1,9 @@
 import "./title.css"
 
-const TitleMain = () => {
+const TitleMain = ({ title }) => {
 	return (
 		<div className="steer-color-secondary">
-			Seja Bem-Vindo de volta!
+			{title}
 		</div>
 	)
 }

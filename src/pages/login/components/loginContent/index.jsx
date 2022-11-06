@@ -1,21 +1,24 @@
-import TitleMain from "../../../../components/basic/title";
-import ButtonMain from '../../../../components/basic/button';
-import InputMain from '../../../../components/basic/input';
 import "./login-content.css"
+import { useState } from "react";
+import Login from "../Login";
+import Register from "../Register";
 
 const LoginContent = () => {
+    const [isFirstLogin, setIsFirstLogin] = useState(false);
 
+    
     return (
         <div id="login-content">
-            <TitleMain />
-            <InputMain />
-            <InputMain />
-            <ButtonMain />
-            <div
-                className="steer-color-secondary "
-            >
-                Ainda não tem uma conta? Cadastre-se
-            </div>
+            { 
+                isFirstLogin ? 
+                <Register 
+                    setIsFirstLogin={setIsFirstLogin}
+                /> 
+                :
+                <Login 
+                    setIsFirstLogin={setIsFirstLogin}
+                /> 
+            }
         </div>
     );
 }

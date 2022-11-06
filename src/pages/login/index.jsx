@@ -15,7 +15,8 @@ const LoginComponent = () => {
 			"
 		>
 			<img 
-				src={SteerLogo} 
+				src={SteerLogo}
+				alt="SteerLogo"
 				className="login-steer-logo"
 			/>
 			<Modal>
