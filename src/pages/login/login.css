@@ -1,0 +1,10 @@
+#LoginComponent {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.login-steer-logo{
+    width: 10rem;
+}

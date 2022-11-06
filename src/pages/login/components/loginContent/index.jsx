@@ -11,6 +11,11 @@ const LoginContent = () => {
             <InputMain />
             <InputMain />
             <ButtonMain />
+            <div
+                className="steer-color-secondary "
+            >
+                Ainda não tem uma conta? Cadastre-se
+            </div>
         </div>
     );
 }
