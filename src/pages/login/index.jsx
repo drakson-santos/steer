@@ -5,13 +5,14 @@ import "./login.css"
 
 import SteerLogo from "../../assets/images/steer-logo.png"
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const LoginComponent = () => {
 	const [loginIsSuccess, setLoginIsSuccess] = useState(false)
-
+	const navigate = useNavigate();
 
 	useEffect(() => {
-		if (loginIsSuccess) alert("ok")
+		if (loginIsSuccess) navigate('/home');
 	}, [loginIsSuccess]);
 
 	return (

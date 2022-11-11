@@ -13,6 +13,7 @@ const LoginContent = ({ setLoginIsSuccess }) => {
                 isFirstLogin ?
                 <Register
                     setIsFirstLogin={setIsFirstLogin}
+                    setLoginIsSuccess={setLoginIsSuccess}
                 />
                 :
                 <Login

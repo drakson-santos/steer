@@ -3,23 +3,29 @@ import InputMain from "../../../../components/basic/input"
 import TitleMain from "../../../../components/basic/title"
 import "./register.css"
 
-const Register = ({ setIsFirstLogin }) => {
+const Register = ({
+    setIsFirstLogin,
+    setLoginIsSuccess
+ }) => {
     return (
         <div id="Register">
             <TitleMain title="Seja Bem-vindo!"/>
-            <InputMain 
-                placeholder="Nome de usuário" 
+            <InputMain
+                placeholder="Nome de usuário"
             />
-            <InputMain 
-                placeholder="Email" 
+            <InputMain
+                placeholder="Email"
             />
-            <InputMain 
-                placeholder="Senha" 
+            <InputMain
+                placeholder="Senha"
             />
-            <InputMain 
+            <InputMain
                 placeholder="Confirme a senha"
             />
-            <ButtonMain title="Se Cadastrar"/>
+            <ButtonMain
+                title="Se Cadastrar"
+                action={() => setLoginIsSuccess(true)}
+            />
             <div
                 className="steer-color-secondary"
                 onClick={() => setIsFirstLogin(false)}
