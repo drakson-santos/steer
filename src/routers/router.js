@@ -1,15 +1,17 @@
 import React from "react";
-import { Route, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import HomePage from "../pages/home";
 import LoginComponent from "../pages/login";
 
-const Routes = () => {
+const AppRoutes = () => {
    return(
        <BrowserRouter>
-           <Route component = { LoginComponent }  path="/" exact />
-           <Route component = { HomePage }  path="/home" exact />
+        <Routes>
+            <Route element={<LoginComponent />}  path="/" exact />
+            <Route element={<HomePage />}  path="/home" exact />
+        </Routes>
        </BrowserRouter>
    )
 }
 
-export default Routes;
+export default AppRoutes;
