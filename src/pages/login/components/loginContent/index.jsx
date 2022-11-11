@@ -3,21 +3,22 @@ import { useState } from "react";
 import Login from "../Login";
 import Register from "../Register";
 
-const LoginContent = () => {
+const LoginContent = ({ setLoginIsSuccess }) => {
     const [isFirstLogin, setIsFirstLogin] = useState(false);
 
-    
+
     return (
         <div id="login-content">
-            { 
-                isFirstLogin ? 
-                <Register 
+            {
+                isFirstLogin ?
+                <Register
                     setIsFirstLogin={setIsFirstLogin}
-                /> 
+                />
                 :
-                <Login 
+                <Login
                     setIsFirstLogin={setIsFirstLogin}
-                /> 
+                    setLoginIsSuccess={setLoginIsSuccess}
+                />
             }
         </div>
     );

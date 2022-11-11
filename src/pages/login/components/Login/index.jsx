@@ -2,17 +2,24 @@ import TitleMain from "../../../../components/basic/title";
 import ButtonMain from '../../../../components/basic/button';
 import InputMain from '../../../../components/basic/input';
 
-const Login = ({ setIsFirstLogin }) => {
+const Login = ({
+    setIsFirstLogin,
+    setLoginIsSuccess
+}) => {
+
     return (
         <>
             <TitleMain title="Seja Bem-Vindo de volta!"/>
-            <InputMain 
+            <InputMain
                 placeholder="Nome de usuário"
             />
-            <InputMain 
+            <InputMain
                 placeholder="Senha"
             />
-            <ButtonMain title="Entrar"/>
+            <ButtonMain
+                title="Entrar"
+                action={() => setLoginIsSuccess(true)}
+            />
             <div
                 className="steer-color-secondary"
                 onClick={() => setIsFirstLogin(true)}

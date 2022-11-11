@@ -1,11 +1,14 @@
 import Button from 'react-bootstrap/Button';
 
-const ButtonMain = ({ title }) => {
+const ButtonMain = ({
+	title,
+	action
+}) => {
 	return (
-		<Button variant="primary">
+		<Button onClick={action} variant="primary">
             {title}
         </Button>
-	)	
+	)
 }
 
 export default ButtonMain
