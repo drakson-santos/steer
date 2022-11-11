@@ -1,8 +1,12 @@
+import InterestComponent from "../../components/interests"
 import "./home.css"
 
 const HomePage = () => {
     return (
-        <div>Home page</div>
+        <div>
+            <InterestComponent icon="A" title="Restaurante"/>
+            <InterestComponent icon="B" title="Doceria"/>
+        </div>
     )
 }
 
