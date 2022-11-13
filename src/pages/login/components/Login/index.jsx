@@ -2,6 +2,10 @@ import TitleMain from "../../../../components/basic/title";
 import ButtonMain from '../../../../components/basic/button';
 import InputMain from '../../../../components/basic/input';
 
+
+import { AiOutlineUser } from 'react-icons/ai';
+import { RiLockPasswordLine } from 'react-icons/ri';
+
 const Login = ({
     setIsFirstLogin,
     setLoginIsSuccess
@@ -9,11 +13,23 @@ const Login = ({
 
     return (
         <>
-            <TitleMain title="Seja Bem-Vindo de volta!"/>
+            <TitleMain title="Seja Bem-Vindo!"/>
             <InputMain
-                placeholder="Nome de usuário"
+                icon={
+                    <AiOutlineUser
+                        size={30}
+                        color="white"
+                    />
+                }
+                placeholder="Email"
             />
             <InputMain
+                icon={
+                    <RiLockPasswordLine
+                        size={30}
+                        color="white"
+                    />
+                }
                 placeholder="Senha"
             />
             <ButtonMain
@@ -21,7 +37,7 @@ const Login = ({
                 action={() => setLoginIsSuccess(true)}
             />
             <div
-                className="steer-color-secondary"
+                className="steer-color-main"
                 onClick={() => setIsFirstLogin(true)}
             >
                 Ainda não tem uma conta? Cadastre-se

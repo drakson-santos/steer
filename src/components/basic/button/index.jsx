@@ -5,7 +5,10 @@ const ButtonMain = ({
 	action
 }) => {
 	return (
-		<Button onClick={action} variant="primary">
+		<Button
+			onClick={action}
+			variant="primary"
+		>
             {title}
         </Button>
 	)

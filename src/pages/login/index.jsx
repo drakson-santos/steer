@@ -20,6 +20,7 @@ const LoginComponent = () => {
 			id="LoginComponent"
 			className="
 				div-style-h100
+				steer-color-background-main
 			"
 		>
 			<img

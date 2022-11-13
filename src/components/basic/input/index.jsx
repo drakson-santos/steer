@@ -2,19 +2,17 @@ import "./input.css"
 import { AiOutlineUser } from 'react-icons/ai';
 
 const InputMain = ({
+	icon,
 	placeholder,
 }) => {
 
 	return (
 		<div id="InputMain">
 			<div className="input-icon">
-				<AiOutlineUser 
-					size={30}
-					color="white"
-				/>
+				{icon}
 			</div>
-			<input 
-				className="input-main" 
+			<input
+				className="input-main"
 				type="text"
 				placeholder={placeholder}
 			/>
