@@ -1,11 +1,10 @@
-import InterestComponent from "../../components/interests"
+import SelectInterestsPage from "../interests"
 import "./home.css"
 
 const HomePage = () => {
     return (
-        <div>
-            <InterestComponent icon="A" title="Restaurante"/>
-            <InterestComponent icon="B" title="Doceria"/>
+        <div className="div-style-h100">
+            <SelectInterestsPage />
         </div>
     )
 }
