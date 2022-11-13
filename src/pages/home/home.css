@@ -1,0 +1,87 @@
+#HomePage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#HomeHeader {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-data-user {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-config {
+    border: 1px solid blue;
+}
+
+#HomeContent {
+    border: 1px solid blue;
+    height: 100%;
+}
+
+#HomeFilters {
+    border: 2px solid red;
+    height: 50%;
+
+}
+
+.home-filters-header {
+    border: 2px solid yellow;
+    height: 75%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.home-filters-filters {
+    border: 1px solid blue;
+    height: 25%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+}
+
+.home-filter {
+    background-color: red;
+    min-width: 65px;
+    height: 65px;
+    border-radius: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#HomeListLocations {
+    border: 2px solid red;
+    height: 50%;
+
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+}
+
+.list-locations {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.location {
+    margin: 5px;
+}
+
+#HomeFooter {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-around;
+}
