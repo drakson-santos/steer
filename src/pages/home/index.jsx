@@ -2,7 +2,89 @@ import "./home.css"
 import foto from "../../assets/images/pizza.png"
 import UserPerfil from "../../components/UserPerfil"
 import IconSettings from "../../assets/icons/settings.svg"
+import FilterComponent from "../../components/Filter"
+import fogo from "../../assets/icons/fogo.svg"
+import hambuguer from "../../assets/icons/hambuguer.svg"
+import pizza from "../../assets/icons/pizza.svg"
+import sino from "../../assets/icons/sino.svg"
 
+const lugares_mock = [
+    {
+        icon: fogo,
+        selected: true,
+    },
+    {
+        icon: hambuguer,
+        selected: false,
+    },
+    {
+        icon: pizza,
+        selected: false,
+    },
+    {
+        icon: sino,
+        selected: true,
+    },
+    {
+        icon: fogo,
+        selected: false,
+    },
+    {
+        icon: hambuguer,
+        selected: false,
+    },
+    {
+        icon: pizza,
+        selected: false,
+    },
+    {
+        icon: sino,
+        selected: false,
+    }
+]
+
+const locations_mock = [
+    {
+        photo: foto,
+        title: "Pizza Hut",
+        sub_title: "Pizzaria"
+    },
+    {
+        photo: foto,
+        title: "Pizza Hut",
+        sub_title: "Pizzaria"
+    },
+    {
+        photo: foto,
+        title: "Pizza Hut",
+        sub_title: "Pizzaria"
+    },
+    {
+        photo: foto,
+        title: "Pizza Hut",
+        sub_title: "Pizzaria"
+    },
+    {
+        photo: foto,
+        title: "Pizza Hut",
+        sub_title: "Pizzaria"
+    },
+    {
+        photo: foto,
+        title: "Pizza Hut",
+        sub_title: "Pizzaria"
+    },
+    {
+        photo: foto,
+        title: "Pizza Hut",
+        sub_title: "Pizzaria"
+    },
+    {
+        photo: foto,
+        title: "Pizza Hut",
+        sub_title: "Pizzaria"
+    },
+]
 const HomePage = () => {
     return (
         <div id="HomePage" className="div-style-h100">
@@ -31,45 +113,15 @@ const HomePage = () => {
                     </div>
 
                     <div className="home-filters-filters">
+                        {
+                            lugares_mock.map((item) => (
+                                <FilterComponent
+                                    icon={item.icon}
+                                    selected={item.selected}
+                                />
+                            ))
+                        }
 
-                        <div className="home-filter">
-                            A
-                        </div>
-                        <div className="home-filter">
-                            B
-                        </div>
-                        <div className="home-filter">
-                            C
-                        </div>
-                        <div className="home-filter">
-                            D
-                        </div>
-
-                        <div className="home-filter">
-                            A
-                        </div>
-                        <div className="home-filter">
-                            B
-                        </div>
-                        <div className="home-filter">
-                            C
-                        </div>
-                        <div className="home-filter">
-                            D
-                        </div>
-
-                        <div className="home-filter">
-                            A
-                        </div>
-                        <div className="home-filter">
-                            B
-                        </div>
-                        <div className="home-filter">
-                            C
-                        </div>
-                        <div className="home-filter">
-                            D
-                        </div>
                     </div>
                 </div>
 
@@ -81,45 +133,20 @@ const HomePage = () => {
 
                     <div className="list-locations">
 
-                        <div className="location">
-                            <div>
-                                <img src={foto} alt="" />
-                            </div>
-                            <div>
-                                <div className="steer-style-title-secondary">Pizza Hut</div>
-                                <div className="steer-style-title-subtitle">Pizzaria</div>
-                            </div>
-                        </div>
+                        {
+                            locations_mock.map((item) => (
+                                <div className="location">
+                                    <div>
+                                        <img src={item.photo} alt="" />
+                                    </div>
+                                    <div>
+                                        <div className="steer-style-title-secondary">{item.title}</div>
+                                        <div className="steer-style-title-subtitle">{item.sub_title}</div>
+                                    </div>
+                                </div>
+                            ))
+                        }
 
-                        <div className="location">
-                            <div>
-                                <img src={foto} alt="" />
-                            </div>
-                            <div>
-                                <div className="steer-style-title-secondary">Pizza Hut</div>
-                                <div className="steer-style-title-subtitle">Pizzaria</div>
-                            </div>
-                        </div>
-
-                        <div className="location">
-                            <div>
-                                <img src={foto} alt="" />
-                            </div>
-                            <div>
-                                <div className="steer-style-title-secondary">Pizza Hut</div>
-                                <div className="steer-style-title-subtitle">Pizzaria</div>
-                            </div>
-                        </div>
-
-                        <div className="location">
-                            <div>
-                                <img src={foto} alt="" />
-                            </div>
-                            <div>
-                                <div className="steer-style-title-secondary">Pizza Hut</div>
-                                <div className="steer-style-title-subtitle">Pizzaria</div>
-                            </div>
-                        </div>
                     </div>
 
                 </div>

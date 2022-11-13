@@ -1,5 +1,4 @@
 import "./input.css"
-import { AiOutlineUser } from 'react-icons/ai';
 
 const InputMain = ({
 	icon,
