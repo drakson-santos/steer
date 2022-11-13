@@ -66,8 +66,8 @@
     align-items: center;
 }
 
-.location {
-    margin: 5px;
+.location-details-content {
+    height: 100%;
 }
 
 #HomeFooter {

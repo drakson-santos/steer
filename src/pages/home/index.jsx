@@ -7,6 +7,8 @@ import fogo from "../../assets/icons/fogo.svg"
 import hambuguer from "../../assets/icons/hambuguer.svg"
 import pizza from "../../assets/icons/pizza.svg"
 import sino from "../../assets/icons/sino.svg"
+import LocationComponent from "../../components/Location"
+import LocationDetailsComponent from "../../components/LocationDetails"
 
 const lugares_mock = [
     {
@@ -88,7 +90,7 @@ const locations_mock = [
 const HomePage = () => {
     return (
         <div id="HomePage" className="div-style-h100">
-            <div id="HomeHeader">
+            {/* <div id="HomeHeader">
                 <UserPerfil />
                 <div className="home-config">
                     <img src={IconSettings} alt="" />
@@ -132,27 +134,23 @@ const HomePage = () => {
                     </div>
 
                     <div className="list-locations">
-
                         {
                             locations_mock.map((item) => (
-                                <div className="location">
-                                    <div>
-                                        <img src={item.photo} alt="" />
-                                    </div>
-                                    <div>
-                                        <div className="steer-style-title-secondary">{item.title}</div>
-                                        <div className="steer-style-title-subtitle">{item.sub_title}</div>
-                                    </div>
-                                </div>
+                                <LocationComponent
+                                    photo={item.photo}
+                                    title={item.title}
+                                    sub_title={item.sub_title}
+                                />
                             ))
                         }
-
                     </div>
 
                 </div>
 
+            </div> */}
+            <div className="location-details-content">
+                <LocationDetailsComponent />
             </div>
-
             <div id="HomeFooter">
                 <div>Steer</div>
                 <div>ICON 1</div>

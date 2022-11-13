@@ -1,0 +1,90 @@
+#LocationDetails {
+    height: 100%;
+}
+
+.location-details-photo-content {
+    height: 30%;
+    position: relative;
+}
+
+.location-details-photo {
+    width: 100%;
+    height: 100%;
+}
+
+.location-details-details-content {
+    background-color: black;
+    color: white;
+
+    height: 75%;
+    position: relative;
+    margin-top: -10%;
+    border-radius: 2rem 2rem 0px 0px;
+}
+
+#LocaitonDetailsHeader {
+    padding: 1rem;
+    border-radius: 2rem 2rem 0px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.locatin-details-note {
+    background-color: #FFCD1A;
+    color: black;
+
+    width: 3.5em;
+    font-weight: 700;
+    text-align: right;
+    padding-right: 5px;
+    padding-left: 5px;
+    border-radius: 30%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#LocaitonDetailsContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#LocationDetailsNote {
+    width: 70px;
+    height: 122px;
+    background: #FFFFFF;
+    border-radius: 35px;
+    color: black;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.location-details-note-icon {
+    width: 64px;
+    height: 64px;
+
+    background: #DC3C4D;
+    border-radius: 50%;
+    margin-top: 0.3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.location-details-note-description {
+    font-weight: 700;
+    font-size: 11.9121px;
+    line-height: 14px;
+    text-align: center;
+}
+
+.location-details-note-note {
+    font-size: 0.75rem;
+    margin-bottom: 0.5rem;
+}
