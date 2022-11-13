@@ -8,16 +8,16 @@
     border: 1px solid red;
     display: flex;
     justify-content: space-between;
-}
-
-.home-data-user {
-    border: 1px solid blue;
-    display: flex;
-    justify-content: space-between;
+    padding: 10px;
 }
 
 .home-config {
     border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3rem;
+    cursor: pointer;
 }
 
 #HomeContent {

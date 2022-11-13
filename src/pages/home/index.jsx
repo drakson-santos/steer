@@ -1,16 +1,15 @@
 import "./home.css"
 import foto from "../../assets/images/pizza.png"
+import UserPerfil from "../../components/UserPerfil"
+import IconSettings from "../../assets/icons/settings.svg"
 
 const HomePage = () => {
     return (
         <div id="HomePage" className="div-style-h100">
             <div id="HomeHeader">
-                <div className="home-data-user">
-                    <div>FOTO</div>
-                    <div>Olá, Kevin!</div>
-                </div>
+                <UserPerfil />
                 <div className="home-config">
-                    ICON
+                    <img src={IconSettings} alt="" />
                 </div>
             </div>
 
