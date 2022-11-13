@@ -17,12 +17,16 @@ const HomePage = () => {
 
                 <div id="HomeFilters">
                     <div className="home-filters-header">
-                        <div>
+                        <div className="steer-style-tiltle-secondary">
                             Vamos selecionar o melhor local para hoje!
                         </div>
 
                         <div>
-                            <input type="text" placeholder="Pesquisar o estabelecimento"/>
+                            <input
+                                className="home-input-filters"
+                                type="text"
+                                placeholder="Pesquisar o estabelecimento"
+                            />
                         </div>
                     </div>
 
