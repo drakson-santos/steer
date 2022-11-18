@@ -7,6 +7,12 @@
     position: relative;
 }
 
+.location-details-back {
+    background-color: red;
+    position: absolute;
+    color: white;
+}
+
 .location-details-photo {
     width: 100%;
     height: 100%;

@@ -57,10 +57,16 @@ const LocationDetailsNotes = [
     }
 ]
 
-const LocationDetailsComponent = () => {
+const LocationDetailsComponent = ({ onClick }) => {
     return (
         <div id="LocationDetails">
             <div className="location-details-photo-content">
+                <div
+                    className="location-details-back"
+                    onClick={() => onClick()}
+                >
+                    Voltar
+                </div>
                 <img
                     src={photo}
                     alt=""

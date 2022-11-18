@@ -9,6 +9,7 @@ import pizza from "../../assets/icons/pizza.svg"
 import sino from "../../assets/icons/sino.svg"
 import LocationComponent from "../../components/Location"
 import LocationDetailsComponent from "../../components/LocationDetails"
+import { useEffect, useState } from "react"
 
 const lugares_mock = [
     {
@@ -87,10 +88,13 @@ const locations_mock = [
         sub_title: "Pizzaria"
     },
 ]
-const HomePage = () => {
+
+
+const HomeContent = ({ onClick }) => {
+
     return (
-        <div id="HomePage" className="div-style-h100">
-            {/* <div id="HomeHeader">
+        <>
+            <div id="HomeHeader">
                 <UserPerfil />
                 <div className="home-config">
                     <img src={IconSettings} alt="" />
@@ -140,6 +144,7 @@ const HomePage = () => {
                                     photo={item.photo}
                                     title={item.title}
                                     sub_title={item.sub_title}
+                                    onClick={onClick}
                                 />
                             ))
                         }
@@ -147,10 +152,39 @@ const HomePage = () => {
 
                 </div>
 
-            </div> */}
-            <div className="location-details-content">
-                <LocationDetailsComponent />
             </div>
+        </>
+    )
+}
+
+const HomeContentLocationDetailsComponent = ({ onClick }) => {
+    return (
+        <div className="location-details-content">
+            <LocationDetailsComponent onClick={onClick}/>
+        </div>
+    )
+}
+
+
+const HomePage = () => {
+    const [showDetails, setShowDetails] = useState(false)
+    const [homeContent, setHomeContent] = useState(<></>)
+
+    function handlerHomeContent() {
+        setShowDetails(!showDetails)
+    }
+
+    useEffect(() => {
+        var content = <></>
+        if (showDetails) content = <HomeContentLocationDetailsComponent onClick={handlerHomeContent}/>
+        else content = <HomeContent onClick={handlerHomeContent}/>
+        setHomeContent(content)
+    }, [showDetails])
+
+    return (
+        <div id="HomePage" className="div-style-h100">
+            {homeContent}
+
             <div id="HomeFooter">
                 <div>Steer</div>
                 <div>ICON 1</div>
