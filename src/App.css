@@ -19,7 +19,7 @@
 }
 
 .steer-color-background-main {
-  background-color: #000000;
+  background-color: #27343d;
 }
 
 .steer-color-background-secundary {
@@ -54,8 +54,19 @@
   height: 100%;
 }
 
-
 .box-shadow-all {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+#LogoTitle {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.font-size-7rem {
+  font-size: 7rem;
+}
+
+.font-weight-800 {
+  font-weight: 800;
+}

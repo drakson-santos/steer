@@ -7,6 +7,22 @@ import SteerLogo from "../../assets/images/steer-logo.png"
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+
+const LogoTitle = () => {
+
+	return (
+		<span
+			id="LogoTitle"
+			className="
+				font-size-7rem
+				font-weight-800
+			"
+		>
+			Steer
+		</span>
+	)
+}
+
 const LoginComponent = () => {
 	const [loginIsSuccess, setLoginIsSuccess] = useState(false)
 	const navigate = useNavigate();
@@ -23,11 +39,7 @@ const LoginComponent = () => {
 				steer-color-background-main
 			"
 		>
-			<img
-				src={SteerLogo}
-				alt="SteerLogo"
-				className="login-steer-logo"
-			/>
+			<LogoTitle />
 			<Modal>
 				<LoginContent setLoginIsSuccess={setLoginIsSuccess}/>
 			</Modal>
