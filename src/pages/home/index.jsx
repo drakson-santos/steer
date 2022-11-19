@@ -105,7 +105,7 @@ const HomeContent = ({ onClick }) => {
 
                 <div id="HomeFilters">
                     <div className="home-filters-header">
-                        <div className="steer-style-tiltle-secondary">
+                        <div className="steer-style-tiltle-secondary color-main">
                             Vamos selecionar o melhor local para hoje!
                         </div>
 
@@ -131,9 +131,9 @@ const HomeContent = ({ onClick }) => {
                     </div>
                 </div>
 
-                <div id="HomeListLocations">
+                <div id="HomeListLocations" className="color-main">
 
-                    <div>
+                    <div className="font-weight-600">
                         Estabelecimentos populares:
                     </div>
 
@@ -182,7 +182,13 @@ const HomePage = () => {
     }, [showDetails])
 
     return (
-        <div id="HomePage" className="div-style-h100">
+        <div
+            id="HomePage"
+            className="
+                div-style-h100
+                steer-color-background-main
+            "
+        >
             {homeContent}
 
             <div id="HomeFooter">
