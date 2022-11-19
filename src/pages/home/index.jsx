@@ -11,37 +11,46 @@ import LocationComponent from "../../components/Location"
 import LocationDetailsComponent from "../../components/LocationDetails"
 import { useEffect, useState } from "react"
 import { MDBInput } from "mdb-react-ui-kit"
+import nextId from "react-id-generator";
 
-const lugares_mock = [
+const filters_mock = [
     {
+        id: nextId(),
         icon: fogo,
         selected: true,
     },
     {
+        id: nextId(),
         icon: hambuguer,
         selected: false,
     },
     {
+        id: nextId(),
         icon: pizza,
         selected: false,
     },
     {
+        id: nextId(),
         icon: sino,
         selected: true,
     },
     {
+        id: nextId(),
         icon: fogo,
         selected: false,
     },
     {
+        id: nextId(),
         icon: hambuguer,
         selected: false,
     },
     {
+        id: nextId(),
         icon: pizza,
         selected: false,
     },
     {
+        id: nextId(),
         icon: sino,
         selected: false,
     }
@@ -124,8 +133,9 @@ const HomeContent = ({ onClick }) => {
 
                     <div className="home-filters-filters">
                         {
-                            lugares_mock.map((item) => (
+                            filters_mock.map((item) => (
                                 <FilterComponent
+                                    id={item.id}
                                     icon={item.icon}
                                     selected={item.selected}
                                 />
@@ -143,8 +153,9 @@ const HomeContent = ({ onClick }) => {
 
                     <div className="list-locations">
                         {
-                            locations_mock.map((item) => (
+                            locations_mock.map((item, index) => (
                                 <LocationComponent
+                                    key={index}
                                     photo={item.photo}
                                     title={item.title}
                                     sub_title={item.sub_title}

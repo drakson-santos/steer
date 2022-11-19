@@ -1,5 +1,4 @@
 import "./filter.css"
-import nextId from "react-id-generator";
 import { useState } from "react";
 
 const filters_selected = [];
@@ -17,10 +16,9 @@ function unselect_filter(html_id) {
 }
 
 const FilterComponent = ({ icon }) => {
-    const htmlId = nextId();
     const [selected, setSelected] = useState(false)
 
-    const filterClicked = (html_id) => {
+    const filterClicked = () => {
         setSelected(!selected)
     }
 
@@ -30,7 +28,7 @@ const FilterComponent = ({ icon }) => {
             className={
                 selected ? "filter-selected" : "filter-no-selected"
             }
-            onClick={() => filterClicked(htmlId)}
+            onClick={() => filterClicked()}
         >
             <img src={icon} alt="" />
         </div>
