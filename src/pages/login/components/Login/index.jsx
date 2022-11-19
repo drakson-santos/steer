@@ -1,4 +1,3 @@
-import React from 'react';
 import {
 	MDBContainer,
 	MDBInput,
@@ -36,7 +35,7 @@ function Login({
 				action={() => setLoginIsSuccess(true)}
 			/>
 			<div>
-				<p className="mb-0">Don't have an account? <a onClick={() => setIsFirstLogin(true)} class="text-white-50 fw-bold">Sign Up</a></p>
+				<p className="mb-0">Não tem uma conta? <a onClick={() => setIsFirstLogin(true)} class="text-white-50 fw-bold">Se cadastrar</a></p>
 			</div>
 		</MDBContainer>
 	);
