@@ -10,6 +10,7 @@ import sino from "../../assets/icons/sino.svg"
 import LocationComponent from "../../components/Location"
 import LocationDetailsComponent from "../../components/LocationDetails"
 import { useEffect, useState } from "react"
+import { MDBInput } from "mdb-react-ui-kit"
 
 const lugares_mock = [
     {
@@ -110,10 +111,13 @@ const HomeContent = ({ onClick }) => {
                         </div>
 
                         <div>
-                            <input
+                            <MDBInput
+                                type='text'
                                 className="home-input-filters"
-                                type="text"
-                                placeholder="Pesquisar o estabelecimento"
+                                labelClass='text-white'
+                                label='Pesquisar o estabelecimento'
+                                id='formControlLg'
+                                size="lg"
                             />
                         </div>
                     </div>
