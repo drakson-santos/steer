@@ -8,7 +8,7 @@ const LocationComponent = ({ photo, title, sub_title, onClick }) => {
                 <img src={photo} alt="" />
             </div>
             <div>
-                <div className="steer-style-title-secondary">{title}</div>
+                <div className="steer-style-title-secondary font-weight-600">{title}</div>
                 <div className="steer-style-title-subtitle">{sub_title}</div>
             </div>
         </div>
