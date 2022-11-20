@@ -5,7 +5,7 @@ import LoginComponent from "../pages/login";
 
 const AppRoutes = () => {
    return(
-       <BrowserRouter>
+       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Routes>
             <Route element={<LoginComponent />}  path="/" exact />
             <Route element={<HomePage />}  path="/home" exact />
