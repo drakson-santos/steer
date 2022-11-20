@@ -2,7 +2,7 @@
   "name": "steer",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Drakson-Santos.github.io/steer",
+  "homepage": "https://drakson-santos.github.io/steer",
   "dependencies": {
     "@fontsource/inter": "^4.5.14",
     "@testing-library/jest-dom": "^5.16.5",
