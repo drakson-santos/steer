@@ -8,9 +8,9 @@
 }
 
 .location-details-back {
-    background-color: red;
     position: absolute;
     color: white;
+    margin-top: 10px;
 }
 
 .location-details-photo {
@@ -19,7 +19,6 @@
 }
 
 .location-details-details-content {
-    background-color: black;
     color: white;
 
     height: 75%;

@@ -86,7 +86,7 @@ const LOCATIONS_MOCK = [
     },
     {
         photo: h2,
-        title: "Hambuguer",
+        title: "Nhami nhami",
         sub_title: "Hambuguer",
         id: "hambuguer"
     },
@@ -223,10 +223,11 @@ const HomeContent = ({ onClick }) => {
                             locations_selected.map((item, index) => (
                                 <LocationComponent
                                     key={index}
+                                    id={index}
                                     photo={item.photo}
                                     title={item.title}
                                     sub_title={item.sub_title}
-                                    onClick={onClick}
+                                    onClick={(event, id) => onClick(id)}
                                 />
                             ))
                         }
@@ -239,10 +240,10 @@ const HomeContent = ({ onClick }) => {
     )
 }
 
-const HomeContentLocationDetailsComponent = ({ onClick }) => {
+const HomeContentLocationDetailsComponent = ({ onClick, locationSelected }) => {
     return (
         <div className="location-details-content">
-            <LocationDetailsComponent onClick={onClick}/>
+            <LocationDetailsComponent onClick={onClick} locationSelected={locationSelected}/>
         </div>
     )
 }
@@ -251,14 +252,17 @@ const HomeContentLocationDetailsComponent = ({ onClick }) => {
 const HomePage = () => {
     const [showDetails, setShowDetails] = useState(false)
     const [homeContent, setHomeContent] = useState(<></>)
+    const [locationSelected, setLocationSelected] = useState(null)
 
-    function handlerHomeContent() {
-        setShowDetails(!showDetails)
+    function handlerHomeContent(id) {
+        let show_details = !showDetails
+        setLocationSelected(LOCATIONS_MOCK[id])
+        setShowDetails(show_details)
     }
 
     useEffect(() => {
         var content = <></>
-        if (showDetails) content = <HomeContentLocationDetailsComponent onClick={handlerHomeContent}/>
+        if (showDetails) content = <HomeContentLocationDetailsComponent onClick={handlerHomeContent} locationSelected={locationSelected}/>
         else content = <HomeContent onClick={handlerHomeContent}/>
         setHomeContent(content)
     }, [showDetails])

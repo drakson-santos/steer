@@ -1,9 +1,8 @@
 import "./location.css"
 
-const LocationComponent = ({ photo, title, sub_title, onClick }) => {
-
+const LocationComponent = ({ photo, title, sub_title, id, onClick }) => {
     return (
-        <div id="Location" onClick={() => onClick()}>
+        <div id="Location" onClick={(event) => onClick(event, id)}>
             <div>
                 <img src={photo} />
             </div>

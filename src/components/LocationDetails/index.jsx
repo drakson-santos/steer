@@ -6,6 +6,7 @@ import movimento from "../../assets/images/distancia.svg"
 import preco from "../../assets/images/preco.svg"
 
 import { AiFillStar } from 'react-icons/ai';
+import { IoIosArrowBack } from 'react-icons/io';
 
 const LocationNoteComponent = ({ note }) => {
 
@@ -57,7 +58,8 @@ const LocationDetailsNotes = [
     }
 ]
 
-const LocationDetailsComponent = ({ onClick }) => {
+const LocationDetailsComponent = ({ onClick, locationSelected }) => {
+
     return (
         <div id="LocationDetails">
             <div className="location-details-photo-content">
@@ -65,21 +67,21 @@ const LocationDetailsComponent = ({ onClick }) => {
                     className="location-details-back"
                     onClick={() => onClick()}
                 >
-                    Voltar
+                    <IoIosArrowBack size={30}/>
                 </div>
                 <img
-                    src={photo}
+                    src={locationSelected?.photo}
                     alt=""
                     className="location-details-photo"
                 />
             </div>
 
-            <div className="location-details-details-content">
+            <div className="location-details-details-content steer-color-background-main">
 
                 <div id="LocaitonDetailsHeader">
                     <div>
-                        <div className="steer-style-tiltle-main steer-color-main">Pizza Hunt</div>
-                        <div className="steer-color-subtitle">Pizzaria</div>
+                        <div className="steer-style-tiltle-main steer-color-main">{locationSelected?.title}</div>
+                        <div className="steer-color-subtitle">{locationSelected?.sub_title}</div>
                     </div>
                     <div className="locatin-details-note">
                         <LocationNoteComponent note={4.5}/>
@@ -88,8 +90,9 @@ const LocationDetailsComponent = ({ onClick }) => {
 
                 <div id="LocaitonDetailsContent">
                     {
-                        LocationDetailsNotes.map((item) => (
+                        LocationDetailsNotes.map((item, index) => (
                             <LocationDetailsNoteComponent
+                                key={index}
                                 title={item.title}
                                 icon={item.icon}
                                 value={item.value}
