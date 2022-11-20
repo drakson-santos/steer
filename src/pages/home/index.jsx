@@ -14,93 +14,89 @@ import { MDBInput } from "mdb-react-ui-kit"
 import nextId from "react-id-generator";
 
 const filters_mock = [
+    // {
+    //     id: "sino",
+    //     icon: sino,
+    //     selected: false,
+    // },
     {
-        id: nextId(),
-        icon: fogo,
-        selected: true,
-    },
-    {
-        id: nextId(),
-        icon: hambuguer,
-        selected: false,
-    },
-    {
-        id: nextId(),
-        icon: pizza,
-        selected: false,
-    },
-    {
-        id: nextId(),
-        icon: sino,
-        selected: true,
-    },
-    {
-        id: nextId(),
+        id: "bar",
         icon: fogo,
         selected: false,
     },
     {
-        id: nextId(),
+        id: "hambuguer",
         icon: hambuguer,
         selected: false,
     },
     {
-        id: nextId(),
+        id: "pizzaria",
         icon: pizza,
-        selected: false,
-    },
-    {
-        id: nextId(),
-        icon: sino,
         selected: false,
     }
 ]
 
-const locations_mock = [
+const LOCATIONS_MOCK = [
     {
         photo: foto,
         title: "Pizza Hut",
-        sub_title: "Pizzaria"
+        sub_title: "Pizzaria",
+        id: "pizzaria"
     },
     {
         photo: foto,
-        title: "Pizza Hut",
-        sub_title: "Pizzaria"
+        title: "Hambuguer",
+        sub_title: "Hambuguer",
+        id: "hambuguer"
     },
     {
         photo: foto,
-        title: "Pizza Hut",
-        sub_title: "Pizzaria"
-    },
-    {
-        photo: foto,
-        title: "Pizza Hut",
-        sub_title: "Pizzaria"
-    },
-    {
-        photo: foto,
-        title: "Pizza Hut",
-        sub_title: "Pizzaria"
-    },
-    {
-        photo: foto,
-        title: "Pizza Hut",
-        sub_title: "Pizzaria"
-    },
-    {
-        photo: foto,
-        title: "Pizza Hut",
-        sub_title: "Pizzaria"
-    },
-    {
-        photo: foto,
-        title: "Pizza Hut",
-        sub_title: "Pizzaria"
-    },
+        title: "Paraíba Bar",
+        sub_title: "Bar",
+        id: "bar"
+    }
 ]
 
 
 const HomeContent = ({ onClick }) => {
+    const [locations_selected, setLocationsSelected] = useState(LOCATIONS_MOCK)
+    const [filters_selected, setFiltersSelected] = useState([])
+
+    const handlerFilters = (id, is_selected) => {
+        let filters = [...filters_selected]
+        if (is_selected) {
+            filters.push(id)
+        } else {
+            filters.splice(filters_selected.indexOf(id), 1);
+        }
+        setFiltersSelected(filters)
+    }
+
+
+
+    useEffect(() => {
+        function filterIsSelected(id) {
+            return filters_selected.indexOf(id) > -1
+        }
+
+        if (filters_selected.length) {
+            let locations = []
+
+            for (let index = 0; index < LOCATIONS_MOCK.length; index++) {
+                const location = LOCATIONS_MOCK[index];
+
+                if (filterIsSelected(location.id)) {
+                    locations.push(location)
+                }
+
+            }
+
+            setLocationsSelected(locations)
+        } else {
+            setLocationsSelected(LOCATIONS_MOCK)
+        }
+    }, [filters_selected])
+
 
     return (
         <>
@@ -112,7 +108,6 @@ const HomeContent = ({ onClick }) => {
             </div>
 
             <div id="HomeContent">
-
                 <div id="HomeFilters">
                     <div className="home-filters-header">
                         <div className="steer-style-tiltle-secondary color-main">
@@ -133,8 +128,10 @@ const HomeContent = ({ onClick }) => {
 
                     <div className="home-filters-filters">
                         {
-                            filters_mock.map((item) => (
+                            filters_mock.map((item, index) => (
                                 <FilterComponent
+                                    key={index}
+                                    handlerFilter={handlerFilters}
                                     id={item.id}
                                     icon={item.icon}
                                     selected={item.selected}
@@ -153,7 +150,7 @@ const HomeContent = ({ onClick }) => {
 
                     <div className="list-locations">
                         {
-                            locations_mock.map((item, index) => (
+                            locations_selected.map((item, index) => (
                                 <LocationComponent
                                     key={index}
                                     photo={item.photo}

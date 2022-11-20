@@ -15,11 +15,17 @@ function unselect_filter(html_id) {
     filters_selected.splice(filters_selected.indexOf(html_id), 1);
 }
 
-const FilterComponent = ({ icon }) => {
+const FilterComponent = ({
+    id,
+    icon,
+    handlerFilter,
+}) => {
     const [selected, setSelected] = useState(false)
 
     const filterClicked = () => {
-        setSelected(!selected)
+        let is_selected = !selected
+        setSelected(is_selected)
+        handlerFilter(id, is_selected)
     }
 
     return (
