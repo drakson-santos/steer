@@ -26,9 +26,9 @@ const LoginComponent = () => {
 	const [loginIsSuccess, setLoginIsSuccess] = useState(false)
 	const navigate = useNavigate();
 
-	useEffect(() => {
-		if (loginIsSuccess) navigate('/home');
-	}, [loginIsSuccess]);
+	// useEffect(() => {
+	// 	if (loginIsSuccess) navigate('/home');
+	// }, [loginIsSuccess]);
 
 	return (
 		<div
@@ -40,7 +40,7 @@ const LoginComponent = () => {
 		>
 			<LogoTitle />
 			<Modal>
-				<LoginContent setLoginIsSuccess={setLoginIsSuccess}/>
+				<LoginContent setLoginIsSuccess={() => navigate('/home')}/>
 			</Modal>
 		</div>
 	)

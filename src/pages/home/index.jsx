@@ -25,6 +25,8 @@ import LocationComponent from "../../components/Location"
 import LocationDetailsComponent from "../../components/LocationDetails"
 import { useEffect, useState } from "react"
 import { MDBInput } from "mdb-react-ui-kit"
+import { RiLogoutBoxLine } from 'react-icons/ri';
+import { useNavigate } from 'react-router-dom';
 
 const filters_mock = [
     {
@@ -250,6 +252,7 @@ const HomeContentLocationDetailsComponent = ({ onClick, locationSelected }) => {
 
 
 const HomePage = () => {
+    const navigate = useNavigate();
     const [showDetails, setShowDetails] = useState(false)
     const [homeContent, setHomeContent] = useState(<></>)
     const [locationSelected, setLocationSelected] = useState(null)
@@ -277,10 +280,9 @@ const HomePage = () => {
         >
             {homeContent}
 
-            <div id="HomeFooter">
-                <div>Steer</div>
-                <div>ICON 1</div>
-                <div>ICON 2</div>
+            <div id="HomeFooter" className="font-size-1pont5rem">
+                <div id="LogoTitle">Steer</div>
+                <div onClick={() => navigate('/')}><RiLogoutBoxLine color="white"/></div>
             </div>
         </div>
     )
