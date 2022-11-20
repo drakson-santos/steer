@@ -2,8 +2,6 @@
 import Modal from '../../components/basic/modal';
 import LoginContent from './components/loginContent';
 import "./login.css"
-
-import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -23,12 +21,7 @@ const LogoTitle = () => {
 }
 
 const LoginComponent = () => {
-	const [loginIsSuccess, setLoginIsSuccess] = useState(false)
 	const navigate = useNavigate();
-
-	// useEffect(() => {
-	// 	if (loginIsSuccess) navigate('/home');
-	// }, [loginIsSuccess]);
 
 	return (
 		<div

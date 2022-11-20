@@ -26,6 +26,7 @@ import LocationDetailsComponent from "../../components/LocationDetails"
 import { useEffect, useState } from "react"
 import { MDBInput } from "mdb-react-ui-kit"
 import { RiLogoutBoxLine } from 'react-icons/ri';
+import { AiOutlineSetting } from 'react-icons/ai';
 import { useNavigate } from 'react-router-dom';
 
 const filters_mock = [
@@ -175,7 +176,8 @@ const HomeContent = ({ onClick }) => {
             <div id="HomeHeader">
                 <UserPerfil />
                 <div className="home-config">
-                    <img src={IconSettings} alt="" />
+                    {/* <img src={IconSettings} alt="" /> */}
+                    <AiOutlineSetting size={30}/>
                 </div>
             </div>
 
