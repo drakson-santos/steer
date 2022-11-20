@@ -1,7 +1,21 @@
 import "./home.css"
+// Images
 import foto from "../../assets/images/pizza.png"
+import hamburguer from "../../assets/images/hamburguer.jpg"
+import h2 from "../../assets/images/h2.jfif"
+import hotel from "../../assets/images/hotel.jfif"
+import brHotel from "../../assets/images/br-hotel.jfif"
+import CatarHotel from "../../assets/images/catar-hotel.jfif"
+import bar from "../../assets/images/bar.jfif"
+import bar2 from "../../assets/images/bar2.jfif"
+import bar3 from "../../assets/images/bar3.jfif"
+import karaoke from "../../assets/images/karaoke.jpg"
+import boate from "../../assets/images/boate.jpg"
+// Icons filters
 import UserPerfil from "../../components/UserPerfil"
 import IconSettings from "../../assets/icons/settings.svg"
+import IconBoate from "../../assets/icons/boate.png"
+import IconKaraoke from "../../assets/icons/karaoke.png"
 import FilterComponent from "../../components/Filter"
 import fogo from "../../assets/icons/fogo.svg"
 import hambuguer from "../../assets/icons/hambuguer.svg"
@@ -11,14 +25,13 @@ import LocationComponent from "../../components/Location"
 import LocationDetailsComponent from "../../components/LocationDetails"
 import { useEffect, useState } from "react"
 import { MDBInput } from "mdb-react-ui-kit"
-import nextId from "react-id-generator";
 
 const filters_mock = [
-    // {
-    //     id: "sino",
-    //     icon: sino,
-    //     selected: false,
-    // },
+    {
+        id: "moradia",
+        icon: sino,
+        selected: false,
+    },
     {
         id: "bar",
         icon: fogo,
@@ -33,10 +46,32 @@ const filters_mock = [
         id: "pizzaria",
         icon: pizza,
         selected: false,
+    },
+    {
+        id: "musica",
+        icon: IconKaraoke,
+        selected: false,
+    },
+    {
+        id: "boate",
+        icon: IconBoate,
+        selected: false,
     }
 ]
 
 const LOCATIONS_MOCK = [
+    {
+        photo: karaoke,
+        title: "Karaokê do Tio",
+        sub_title: "Musica",
+        id: "musica"
+    },
+    {
+        photo: boate,
+        title: "Casa do meu pai",
+        sub_title: "boate",
+        id: "boate"
+    },
     {
         photo: foto,
         title: "Pizza Hut",
@@ -44,17 +79,53 @@ const LOCATIONS_MOCK = [
         id: "pizzaria"
     },
     {
-        photo: foto,
+        photo: hamburguer,
         title: "Hambuguer",
         sub_title: "Hambuguer",
         id: "hambuguer"
     },
     {
-        photo: foto,
+        photo: h2,
+        title: "Hambuguer",
+        sub_title: "Hambuguer",
+        id: "hambuguer"
+    },
+    {
+        photo: bar,
         title: "Paraíba Bar",
         sub_title: "Bar",
         id: "bar"
-    }
+    },
+    {
+        photo: bar2,
+        title: "Faculdade",
+        sub_title: "Bar",
+        id: "bar"
+    },
+    {
+        photo: bar3,
+        title: "Zeca Pagodinho",
+        sub_title: "Bar",
+        id: "bar"
+    },
+    {
+        photo: hotel,
+        title: "Hotel",
+        sub_title: "Moradia",
+        id: "moradia"
+    },
+    {
+        photo: brHotel,
+        title: "Catar Hotel",
+        sub_title: "Moradia",
+        id: "moradia"
+    },
+    {
+        photo: CatarHotel,
+        title: "Só para ricos",
+        sub_title: "Moradia",
+        id: "moradia"
+    },
 ]
 
 
@@ -90,7 +161,6 @@ const HomeContent = ({ onClick }) => {
                 }
 
             }
-
             setLocationsSelected(locations)
         } else {
             setLocationsSelected(LOCATIONS_MOCK)
