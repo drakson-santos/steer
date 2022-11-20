@@ -1,12 +1,13 @@
 import "./location-details.css"
-import photo from "../../assets/images/pizza_2.jfif"
 import distancia from "../../assets/images/distancia.svg"
+import augusto from "../../assets/icons/augusto.jfif"
 import espera from "../../assets/images/espera.svg"
 import movimento from "../../assets/images/distancia.svg"
 import preco from "../../assets/images/preco.svg"
 
-import { AiFillStar } from 'react-icons/ai';
+import { AiFillStar} from 'react-icons/ai';
 import { IoIosArrowBack } from 'react-icons/io';
+import { AiOutlineStar } from 'react-icons/ai';
 
 const LocationNoteComponent = ({ note }) => {
 
@@ -99,6 +100,27 @@ const LocationDetailsComponent = ({ onClick, locationSelected }) => {
                             />
                         ))
                     }
+                </div>
+                <div id="LocaitonDetailsComments">
+
+                    <div id="Comment">
+                        <div className="comment-header">
+                            <div>
+                                <img src={augusto} alt="" width={80}/>
+                            </div>
+                            <div className="comment-name">Jacinto Leite</div>
+                        </div>
+                        <div className="comment-starts">
+                            <AiOutlineStar />
+                            <AiOutlineStar />
+                            <AiOutlineStar />
+                            <AiOutlineStar />
+                            <AiOutlineStar />
+                        </div>
+                        <div className="comment">
+                            Lugar ótimo e indico demais, comida saborosa e bem apresentada, atendimento ágil e eficaz, preços convidativos e uma super variedade no cardápio, eu já era fã desde quando era na Alberto Magno, e voltei a frequentar só agora nesse novo espaço, e indico a todos 👏
+                        </div>
+                    </div>
                 </div>
             </div>
 

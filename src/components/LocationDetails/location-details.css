@@ -93,3 +93,39 @@
     font-size: 0.75rem;
     margin-bottom: 0.5rem;
 }
+
+
+
+#Comment {
+    border: 1px solid;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+}
+
+.comment-header {
+    display: flex;
+    align-items: center;
+}
+
+.comment-header img {
+    border-radius: 50%;
+}
+
+.comment-name {
+    margin-left: 10px;
+    font-family: 'Inter';
+}
+
+.comment-starts {
+    color: gold;
+}
+
+.comment{
+    font-family: 'Inter';
+}
+
+#LocaitonDetailsComments {
+    max-height: 50%;
+    overflow-y: auto;
+}
